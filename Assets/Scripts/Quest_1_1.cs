@@ -24,9 +24,11 @@ public class Quest_1_1 : MonoBehaviour
     }
     private void OnTriggerStay(Collider other)
     {
-        if (other.TryGetComponent(out Quest_1 quest) && ePress == true)
+        if (other.TryGetComponent(out Quest_1 quest) && ePress == true && quest.task.text == "Reach the red pole")
         {
-            quest.goodJob = true;        
+            quest.goodJob = true;
+            quest.questCompletion();
+            quest.task.text = "Completed";
         }   
     }
 }
