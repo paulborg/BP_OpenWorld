@@ -20,11 +20,16 @@ public class Quest_1_1 : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        ePress = false; 
+        ePress = false;
+        if (other.TryGetComponent(out Quest_1 quest) && quest.task.text == "Reach the red pole")
+        {
+          quest.task.text = "Press E to interact";
+        }
+       
     }
     private void OnTriggerStay(Collider other)
     {
-        if (other.TryGetComponent(out Quest_1 quest) && ePress == true && quest.task.text == "Reach the red pole")
+        if (other.TryGetComponent(out Quest_1 quest) && ePress == true && quest.task.text == "Press E to interact")
         {
             quest.goodJob = true;
             quest.questCompletion();
