@@ -9,12 +9,14 @@ public class Quest_1 : MonoBehaviour
     public Text task;
     public bool goodJob;
     public bool goodJob2;
-    public int myNumber = 3;
+    private int myNumber = 3;
+    public int Qcount;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         
         task.text = "Walk with WASD";
+        
         
     }
 
@@ -24,7 +26,7 @@ public class Quest_1 : MonoBehaviour
         
         if ((Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D)) && task.text == "Walk with WASD")
         {
-          questCompletion();
+          
           task.text = "Reach the red box";
         }
         Debug.Log(myNumber);
@@ -48,13 +50,13 @@ public class Quest_1 : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        goodJob=false;
-        if (other.tag == "Quest" && task.text == "Reach the red box")
+        if (other.tag == "Quest_Item_1")
         {
-            task.text = "Reach the red pole";
-            questCompletion();
-            goodJob2=true;
+            other.gameObject.SetActive(false);
+            Qcount++;
+            Debug.Log(Qcount);
         }
+    
     }
     public void questCompletion()
     {

@@ -6,6 +6,8 @@ TagManager:
   tags:
   - CinemachineTarget
   - Quest
+  - Npc
+  - Quest_Item_1
   layers:
   - Default
   - TransparentFX
