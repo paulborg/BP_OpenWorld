@@ -3,20 +3,12 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 3
-  tags:
-  - CinemachineTarget
-  - Quest
-<<<<<<< HEAD
-  - Npc
-  - Quest_Item_1
-=======
-  - Ledge
->>>>>>> 8a0739b62c236e84a6b5a64b3ad2d6bed637bfec
+  tags: []
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Geometry
+  - 
   - Water
   - UI
   - 
@@ -51,10 +43,3 @@ TagManager:
     locked: 0
   m_RenderingLayers:
   - Default
-  - Light Layer 1
-  - Light Layer 2
-  - Light Layer 3
-  - Light Layer 4
-  - Light Layer 5
-  - Light Layer 6
-  - Light Layer 7
