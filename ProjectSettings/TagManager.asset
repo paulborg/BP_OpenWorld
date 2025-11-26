@@ -6,13 +6,17 @@ TagManager:
   tags:
   - CinemachineTarget
   - Quest
+<<<<<<< HEAD
   - Npc
   - Quest_Item_1
+=======
+  - Ledge
+>>>>>>> 8a0739b62c236e84a6b5a64b3ad2d6bed637bfec
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Geometry
   - Water
   - UI
   - 
