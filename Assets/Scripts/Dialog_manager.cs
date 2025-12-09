@@ -15,6 +15,7 @@ public class Dialog_manager : MonoBehaviour
     public Quest_1 Quest;
     public Speech speech;
     public int dialogManager;
+
     private float Typespeed;
     public Camera Camera;
     public GameObject Npc;
@@ -22,6 +23,8 @@ public class Dialog_manager : MonoBehaviour
     public ThirdPersonController Controller; 
     public CinemachineVirtualCamera VirtualCamera;
     public CinemachineConfiner Confiner;
+    public StarterAssetsInputs StarterAssets;
+    private int pDialogManager;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -33,8 +36,7 @@ public class Dialog_manager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Quest = GetComponent<Quest_1>();
-        #region
+        #region Test
 
         //if (Quest.task.text == "Walk with WASD" && dialogManager == 0)
         //{
@@ -64,6 +66,8 @@ public class Dialog_manager : MonoBehaviour
         //    typing("oOOo wOw yOu dId iT");
         //}
         #endregion
+        Quest = GetComponent<Quest_1>();
+        
         if (Input.GetKey(KeyCode.Q))
         {
             Typespeed = 0.0001f;
@@ -71,11 +75,15 @@ public class Dialog_manager : MonoBehaviour
 
         nDialog.rectTransform.LookAt(Camera.main.transform);
         nDialog.rectTransform.Rotate(0, 180, 0);
-        
-       
+        pDialog.rectTransform.LookAt(Camera.main.transform);
+        pDialog.rectTransform.Rotate(0, 180, 0);
+        pDialog.rectTransform.position = Player.transform.position + new Vector3(0, 0.5f, 0);
+
+
     }
-    #endregion 
-    
+    #endregion
+
+    #region Npc Typing
     IEnumerator TypeOut(string message)
     {
         
@@ -115,30 +123,6 @@ public class Dialog_manager : MonoBehaviour
         //Controller.MoveSpeed = 2;
         
     }
-
-    #region
-    // testing some stuff
-    //IEnumerator Typespeed()
-    //{
-    //    yield return new WaitForSeconds(0.5f);
-    //    foreach (char letter in Quest.task.text)
-    //    {
-    //        switch (speech)
-    //        {
-    //            case Speech.Hei:
-    //                break;
-    //            case Speech.WOw:
-    //                break;
-    //            case Speech.Hmm:
-    //                break;
-    //            case Speech.YOu:
-    //                break;
-    //            case Speech.oooo:
-    //                break;
-    //        }
-    //    }
-    //}
-    #endregion
     public void typing(string message)
     {
         //Controller = FindAnyObjectByType<ThirdPersonController>();
@@ -167,6 +151,77 @@ public class Dialog_manager : MonoBehaviour
         }
         
     }
+    #endregion
+
+    #region Player Typing
+    IEnumerator pTypeOut(string message)
+    {
+
+        #region
+        // testing some stuff
+        //switch (dialogManager)
+        //    {
+        //        case 0:
+        //            dialog.text = "Hei champ why dont you try to move around any W A S D buttens should work";
+        //            break;
+        //        case 1:
+        //            dialog.text = "Wow good Job you managed to move you look a little lonely how about you talk to that red box over there";
+        //            break;
+        //        case 2:
+        //            dialog.text = "Hmm he did say much thats new, maybe go to that red pole and try ot touch it he likes that";
+        //            break;
+        //        case 3:
+        //            dialog.text = "You need to touch him ;)";
+        //            break;
+        //        case 4:
+        //            dialog.text = "oOOo wOw yOu dId iT";
+        //        break;
+        //        default:
+        //            dialog.text = "";
+        //            break;
+        //    }
+        #endregion 
+        pDialog.text = "";
+        foreach (char letter in message)
+        {
+            pDialog.text += letter;
+            yield return new WaitForSeconds(Typespeed);
+
+        }
+        dialogManager = 0;
+        //Controller = FindAnyObjectByType<ThirdPersonController>();
+        //Controller.MoveSpeed = 2;
+
+    }
+    
+    
+    public void pTyping(string message)
+    {
+        //Controller = FindAnyObjectByType<ThirdPersonController>();
+        //Controller.MoveSpeed = 0;
+        if (pDialogManager == 0)
+        {
+           
+            StartCoroutine(pTypeOut(message));
+            pDialogManager = 1;
+        }
+        pDialog.gameObject.SetActive(true);
+
+        switch (speech)
+        {
+            case Speech.Slow:
+                Typespeed = 0.3f;
+                break;
+            case Speech.Medium:
+                Typespeed = 0.1f;
+                break;
+            case Speech.Fast:
+                Typespeed = 0.05f;
+                break;
+        }
+
+    }
+    #endregion 
     public enum Speech
     {
         Slow,
@@ -175,27 +230,52 @@ public class Dialog_manager : MonoBehaviour
         
 
     }
+
+    #region Looking
     public void lookAT()
     {
         VirtualCamera.Follow = Npc.transform;
         VirtualCamera.LookAt = Npc.transform;
         Confiner.enabled = true;
+        StarterAssets.cursorLocked = false;
     }
     public void lookback()
     {
         VirtualCamera.Follow = Player.transform;
         VirtualCamera.LookAt = null;    
         Confiner.enabled = false;
-
+        StarterAssets.cursorLocked = true;
     }
-
+    #endregion
     public void OnButtonClick(string message)
     {
       pDialog.gameObject.SetActive(true);
-      nDialog = pDialog;
-      StartCoroutine(TypeOut(message));
+       pTyping("Sorry");   
     }
 
+ #region
+    // testing some stuff
+    //IEnumerator Typespeed()
+    //{
+    //    yield return new WaitForSeconds(0.5f);
+    //    foreach (char letter in Quest.task.text)
+    //    {
+    //        switch (speech)
+    //        {
+    //            case Speech.Hei:
+    //                break;
+    //            case Speech.WOw:
+    //                break;
+    //            case Speech.Hmm:
+    //                break;
+    //            case Speech.YOu:
+    //                break;
+    //            case Speech.oooo:
+    //                break;
+    //        }
+    //    }
+    //}
+    #endregion
 }
     
 

@@ -36,7 +36,7 @@ public class Poledialog : MonoBehaviour
             manager.nDialog.rectTransform.position = gameObject.transform.position + new Vector3(0, 1.5f, 0);
             manager.typing("Hei dont touch me there, because you Did that you have to gather the towns news papers");
             manager.lookAT();
-
+            
         }
         
         if (other.tag == "Player" && Quest.Qcount == 3)
