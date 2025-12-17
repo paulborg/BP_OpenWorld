@@ -15,7 +15,7 @@ public class Dialog_manager : MonoBehaviour
     public Quest_1 Quest;
     public Speech speech;
     public int dialogManager;
-
+    Ui_manager uiManager;
     private float Typespeed;
     public Camera Camera;
     public GameObject Npc;
@@ -73,11 +73,11 @@ public class Dialog_manager : MonoBehaviour
             Typespeed = 0.0001f;
         }
 
-        nDialog.rectTransform.LookAt(Camera.main.transform);
-        nDialog.rectTransform.Rotate(0, 180, 0);
-        pDialog.rectTransform.LookAt(Camera.main.transform);
-        pDialog.rectTransform.Rotate(0, 180, 0);
-        pDialog.rectTransform.position = Player.transform.position + new Vector3(0, 0.5f, 0);
+        //nDialog.rectTransform.LookAt(Camera.main.transform);
+        //nDialog.rectTransform.Rotate(0, 180, 0);
+        //pDialog.rectTransform.LookAt(Camera.main.transform);
+        //pDialog.rectTransform.Rotate(0, 180, 0);
+        //pDialog.rectTransform.position = Player.transform.position + new Vector3(0, 0.5f, 0);
 
 
     }
@@ -116,7 +116,7 @@ public class Dialog_manager : MonoBehaviour
         {
             nDialog.text += letter;
             yield return new WaitForSeconds(Typespeed);
-             
+            
         }
         dialogManager = 0;
         //Controller = FindAnyObjectByType<ThirdPersonController>();
@@ -129,9 +129,7 @@ public class Dialog_manager : MonoBehaviour
         //Controller.MoveSpeed = 0;
         if (dialogManager == 0)
         {
-            VirtualCamera.Follow = Npc.transform;
-            VirtualCamera.LookAt = Npc.transform;
-            Confiner.enabled = true;
+            
             StartCoroutine(TypeOut(message));
             dialogManager = 1;
         }
@@ -226,9 +224,7 @@ public class Dialog_manager : MonoBehaviour
     {
         Slow,
         Medium,
-        Fast
-        
-
+        Fast       
     }
 
     #region Looking

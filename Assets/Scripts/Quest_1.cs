@@ -15,7 +15,6 @@ public class Quest_1 : MonoBehaviour
     void Start()
     {
         
-        task.text = "Walk with WASD";
         
         
     }
