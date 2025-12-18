@@ -15,18 +15,7 @@ MonoBehaviour:
   charName: 
   dialogueLines:
   - 
-  choices:
-  - dialogueIndex: 0
-    choices: []
-    nextDialogueIndexes: 
-    traitToUpdate: []
-    traitDelta: []
-    flagsToSet: []
-    flagValues: 
-  - dialogueIndex: 0
-    choices: []
-    nextDialogueIndexes: 
-    traitToUpdate: []
-    traitDelta: []
-    flagsToSet: []
-    flagValues: 
+  - 
+  - 
+  - 
+  choices: []
