@@ -6,7 +6,12 @@ using UnityEngine;
 public class DialogueSO : ScriptableObject
 {
     public string charName;
-    public string[] dialogueLines;
+    public string[] initiationLines;
+    public string[] QuestLines;
+    public string[] whileQuestLines;
+    public string[] endQuestLines;
+    public string[] pDialogueLines;
+    public string[] activeQuestProgression;
 
     public DialogueChoice[] choices;
 

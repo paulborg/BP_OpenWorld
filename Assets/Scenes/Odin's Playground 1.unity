@@ -1324,7 +1324,7 @@ MonoBehaviour:
   nDialog: {fileID: 987591431}
   pDialog: {fileID: 1095356822}
   Quest: {fileID: 0}
-  speech: 1
+  speech: 2
   dialogManager: 0
   Camera: {fileID: 1222520761}
   Npc: {fileID: 2000890845}
@@ -1333,6 +1333,7 @@ MonoBehaviour:
   VirtualCamera: {fileID: 543071209}
   Confiner: {fileID: 543071211}
   StarterAssets: {fileID: 984063325}
+  DialogueSO: {fileID: 0}
 --- !u!1 &987591429
 GameObject:
   m_ObjectHideFlags: 0
@@ -1665,8 +1666,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1057469185}
-  - component: {fileID: 1057469184}
-  - component: {fileID: 1057469186}
   m_Layer: 0
   m_Name: Game manager
   m_TagString: Untagged
@@ -1674,23 +1673,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1057469184
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1057469183}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 07b1a9a452e9e1f41a6d8c1372fe7533, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Quest_1
-  success: {fileID: 559912963}
-  task: {fileID: 646380557}
-  goodJob: 0
-  goodJob2: 0
-  Qcount: 0
 --- !u!4 &1057469185
 Transform:
   m_ObjectHideFlags: 0
@@ -1706,30 +1688,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1057469186
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1057469183}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ce20ee2b28dbbfd4db52399b4e8275c7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Dialog_manager
-  nDialog: {fileID: 987591431}
-  pDialog: {fileID: 1095356822}
-  Quest: {fileID: 0}
-  speech: 1
-  dialogManager: 0
-  Camera: {fileID: 1222520761}
-  Npc: {fileID: 2000890845}
-  Player: {fileID: 438309871}
-  Controller: {fileID: 984063327}
-  VirtualCamera: {fileID: 543071209}
-  Confiner: {fileID: 543071211}
-  StarterAssets: {fileID: 984063325}
 --- !u!1 &1066187003 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1973887926327215926, guid: 949ce9aea1c613240867b17ac8501a73, type: 3}
@@ -2272,7 +2230,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1057469186}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: Dialog_manager, Assembly-CSharp
         m_MethodName: OnButtonClick
         m_Mode: 5
@@ -2839,29 +2797,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbb52595906754849aa2c8dd96f04050, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Poledialog
-  manager: {fileID: 1057469186}
+  manager: {fileID: 984063334}
   dialog: []
   startDia: 0
-  Quest: {fileID: 2000890860}
+  Quest: {fileID: 0}
   managerUi: {fileID: 984063328}
   Qcount: 0
---- !u!114 &2000890860
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2000890845}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 07b1a9a452e9e1f41a6d8c1372fe7533, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Quest_1
-  success: {fileID: 559912963}
-  task: {fileID: 646380557}
-  goodJob: 0
-  goodJob2: 0
-  Qcount: 0
+  DialogueSO: {fileID: 11400000, guid: d6fe8a4f62b834a48bcf7e0f0e569af8, type: 2}
 --- !u!65 &2000890865
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3417,9 +3359,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8345070700224654063, guid: 09aade0ecefd01e4b8f7661acf64f5c2, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2000890855}
-    - targetCorrespondingSourceObject: {fileID: 8345070700224654063, guid: 09aade0ecefd01e4b8f7661acf64f5c2, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2000890860}
     - targetCorrespondingSourceObject: {fileID: 8345070700224654063, guid: 09aade0ecefd01e4b8f7661acf64f5c2, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2000890865}

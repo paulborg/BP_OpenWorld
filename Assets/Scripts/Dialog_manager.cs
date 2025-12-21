@@ -25,7 +25,8 @@ public class Dialog_manager : MonoBehaviour
     public CinemachineConfiner Confiner;
     public StarterAssetsInputs StarterAssets;
     private int pDialogManager;
-
+    public DialogueSO DialogueSO;
+    
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -84,6 +85,7 @@ public class Dialog_manager : MonoBehaviour
     #endregion
 
     #region Npc Typing
+
     IEnumerator TypeOut(string message)
     {
         
@@ -248,30 +250,18 @@ public class Dialog_manager : MonoBehaviour
       pDialog.gameObject.SetActive(true);
        pTyping("Sorry");   
     }
-
- #region
-    // testing some stuff
-    //IEnumerator Typespeed()
-    //{
-    //    yield return new WaitForSeconds(0.5f);
-    //    foreach (char letter in Quest.task.text)
-    //    {
-    //        switch (speech)
-    //        {
-    //            case Speech.Hei:
-    //                break;
-    //            case Speech.WOw:
-    //                break;
-    //            case Speech.Hmm:
-    //                break;
-    //            case Speech.YOu:
-    //                break;
-    //            case Speech.oooo:
-    //                break;
-    //        }
-    //    }
-    //}
-    #endregion
+    public void stopMoving()
+    {
+        GetComponent<Animator>().enabled = false;
+        GetComponent<CharacterController>().enabled = false;
+        GetComponent<ThirdPersonController>().enabled = false;
+    }
+    public void startMoving()
+    {
+        GetComponent<Animator>().enabled = true;
+        GetComponent<CharacterController>().enabled = true;
+        GetComponent<ThirdPersonController>().enabled = true;
+    }
 }
     
 
