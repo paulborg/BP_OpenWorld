@@ -20,6 +20,7 @@ public class P_QuestGiver : MonoBehaviour
     public TMP_Text nameText;
     public TMP_Text dialogueText;
 
+
     void Start()
     {
         
@@ -70,7 +71,6 @@ public class P_QuestGiver : MonoBehaviour
             EndDialogue();
             return;
         }
-
         dialogueText.text = dialogueData.dialogueLines[dialogueIndex];
         dialogueIndex++;
     }
