@@ -6,9 +6,9 @@ TerrainLayer:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: TerrainGrassTexture
-  m_DiffuseTexture: {fileID: 2800000, guid: fbacf6ff522b2be4d980ca0c7cea4f5c, type: 3}
-  m_NormalMapTexture: {fileID: 2800000, guid: d5b52c4b30f87e74f8aebb951babee73, type: 3}
+  m_Name: TT_Cobble_Test
+  m_DiffuseTexture: {fileID: 2800000, guid: d65e785b4f9f39f4d8ef2449e439b1f5, type: 3}
+  m_NormalMapTexture: {fileID: 2800000, guid: 604189fe508408b4a8989c759ab71cb3, type: 3}
   m_MaskMapTexture: {fileID: 0}
   m_TileSize: {x: 2, y: 2}
   m_TileOffset: {x: 0, y: 0}
