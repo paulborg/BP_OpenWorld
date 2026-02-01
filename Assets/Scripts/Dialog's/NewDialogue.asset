@@ -21,7 +21,9 @@ MonoBehaviour:
   - 'could you gather some news apapers for me '
   - thank you
   whileQuestLines:
-  - Have you gathered the new papers
+  - Have you started gathering the news papers
+  - Oh you have 2 more paper to go
+  - Oh you have 1 more paper to go
   endQuestLines:
   - Thank you for gathering my news papers
   pDialogueLines: []

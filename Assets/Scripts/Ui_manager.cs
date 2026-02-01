@@ -9,7 +9,7 @@ public class Ui_manager : MonoBehaviour
     public TMP_Text nDialog;
     public TMP_Text pDialog;
     public Text success;
-    public Text activeQuest;
+    public TMP_Text activeQuest;
     public Button Button;
 
 
@@ -33,7 +33,7 @@ public class Ui_manager : MonoBehaviour
         if (other.tag == "Npc")
         {
 
-            nDialog.rectTransform.position = other.transform.position + new Vector3(0, 1.5f, 0);
+            nDialog.rectTransform.position = other.transform.position + new Vector3(0, 2.5f, 0);
         }
     }
 
