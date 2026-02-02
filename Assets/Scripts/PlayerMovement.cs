@@ -72,7 +72,7 @@ public class PlayerMovement : MonoBehaviour
             ySpeed = 10f;
         }
 
-            Debug.Log(characterController.velocity);
+            //Debug.Log(characterController.velocity);
 
             #region Base Movement Inputs & Values
             float horizontalInput = Input.GetAxis("Horizontal");

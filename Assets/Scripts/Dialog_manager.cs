@@ -21,6 +21,7 @@ public class Dialog_manager : MonoBehaviour
     public GameObject Npc;
     public GameObject Player;
     public ThirdPersonController Controller; 
+    public CinemachineFreeLook cinemachineFreeLook;
     public CinemachineVirtualCamera VirtualCamera;
     public CinemachineConfiner Confiner;
     public StarterAssetsInputs StarterAssets;
@@ -232,17 +233,20 @@ public class Dialog_manager : MonoBehaviour
     #region Looking
     public void lookAT()
     {
-        VirtualCamera.Follow = Npc.transform;
-        VirtualCamera.LookAt = Npc.transform;
-        Confiner.enabled = true;
-        StarterAssets.cursorLocked = false;
+        //VirtualCamera.Follow = Npc.transform;
+        //cinemachineFreeLook.Follow = null;
+        cinemachineFreeLook.LookAt = Npc.transform;
+        //VirtualCamera.LookAt = Npc.transform;
+        //Confiner.enabled = true;
+        //StarterAssets.cursorLocked = false;
     }
     public void lookback()
     {
-        VirtualCamera.Follow = Player.transform;
-        VirtualCamera.LookAt = null;    
-        Confiner.enabled = false;
-        StarterAssets.cursorLocked = true;
+        //VirtualCamera.Follow = Player.transform;
+        //VirtualCamera.LookAt = null;    
+        cinemachineFreeLook.LookAt = Player.transform;
+        //Confiner.enabled = false;
+        //StarterAssets.cursorLocked = true;
     }
     #endregion
     public void OnButtonClick(string message)
@@ -252,15 +256,19 @@ public class Dialog_manager : MonoBehaviour
     }
     public void stopMoving()
     {
+        GetComponent<PlayerMovement>().enabled = false;
         GetComponent<Animator>().enabled = false;
-        GetComponent<CharacterController>().enabled = false;
-        GetComponent<ThirdPersonController>().enabled = false;
+        
+        //GetComponent<CharacterController>().enabled = false;
+        //GetComponent<ThirdPersonController>().enabled = false;
     }
     public void startMoving()
     {
+        GetComponent<PlayerMovement>().enabled = true;
         GetComponent<Animator>().enabled = true;
-        GetComponent<CharacterController>().enabled = true;
-        GetComponent<ThirdPersonController>().enabled = true;
+        
+        //GetComponent<CharacterController>().enabled = true;
+        //GetComponent<ThirdPersonController>().enabled = true;
     }
 }
     

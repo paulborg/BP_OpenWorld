@@ -10750,7 +10750,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.14958347, y: 0.0000000360896, z: -0.0000000054598357, w: 0.9887491}
+  m_LocalRotation: {x: 0.14958346, y: -0.000000014733511, z: 0.0000000022289675, w: 0.9887491}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -26077,8 +26077,8 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 2
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Radius: 2.5674999
+  m_Center: {x: -0.5675001, y: 0, z: -9.59236e-16}
 --- !u!4 &816459074
 Transform:
   m_ObjectHideFlags: 0
@@ -26118,7 +26118,7 @@ MonoBehaviour:
   dialogexpired: 0
   restartDia: 0
   Epress: 0
-  isDialogActive: 0
+  isDialogActive: 1
   dialog: []
 --- !u!65 &816459076
 BoxCollider:
@@ -26137,10 +26137,10 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
-  m_Size: {x: 4.285788, y: 2.9042473, z: 2.5605743}
-  m_Center: {x: 0.016221285, y: 0.95212364, z: -0.16903883}
+  m_Size: {x: 8.154534, y: 2.9042473, z: 7.7443676}
+  m_Center: {x: -1.9181523, y: 0.95212364, z: -0.9661112}
 --- !u!1 &818520469
 GameObject:
   m_ObjectHideFlags: 0
@@ -36071,6 +36071,7 @@ MonoBehaviour:
   Npc: {fileID: 816459071}
   Player: {fileID: 1151808561}
   Controller: {fileID: 0}
+  cinemachineFreeLook: {fileID: 1677467109}
   VirtualCamera: {fileID: 0}
   Confiner: {fileID: 0}
   StarterAssets: {fileID: 0}
@@ -44490,10 +44491,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Hey there! aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+  m_text: hhhhhhgggggggggggggggggggg
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}
+  m_sharedMaterial: {fileID: 2100000, guid: f2dcf029949142e28b974630369c8b4e, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -44517,14 +44518,14 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 0.5
-  m_fontSizeBase: 0.5
+  m_fontSize: 0.4
+  m_fontSizeBase: 0.4
   m_fontWeight: 400
   m_enableAutoSizing: 0
-  m_fontSizeMin: 18
+  m_fontSizeMin: 0
   m_fontSizeMax: 72
-  m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_fontStyle: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0

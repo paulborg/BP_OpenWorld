@@ -73,13 +73,15 @@ public class Poledialog : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {    
             Epress = false;
-        if (other.tag == "Player" && startDia == false  )
+        if (other.tag == "Player" && startDia == false )
         {  
+
             manager.Npc = gameObject;
-            startDia = true;           
+            //startDia = true;           
             manager.typing(DialogueSO.initiationLines[0]);            
             manager.lookAT();
             dialogexpired = false;
+
             //manager.nDialog.rectTransform.position = gameObject.transform.position + new Vector3(0, 1.5f, 0);
         }
         
@@ -95,16 +97,17 @@ public class Poledialog : MonoBehaviour
         if (other.tag == "Player")
         {
             GetComponent<BoxCollider>().enabled = true;
-            GetComponent<CapsuleCollider>().enabled = false;
+            GetComponent<SphereCollider>().enabled = false;
+            Debug.Log("Boop");
         }
     }    
     private void OnTriggerStay(Collider other)
     {
-        if (!isDialogActive && !dialogexpired && manager.dialogManager == 0 && Epress && !restartDia)
+        if (isDialogActive && !dialogexpired && manager.dialogManager == 0 && Epress && !restartDia)
         {
             dialogexpired = true;
             restartDia = true;
-            isDialogActive = true;
+            //isDialogActive = true;
             startDialog();
             
         }
@@ -150,13 +153,18 @@ public class Poledialog : MonoBehaviour
     {        
         if (other.tag == "Player")
         {
-            GetComponent<BoxCollider>().enabled = false;
-            GetComponent<CapsuleCollider>().enabled = true;
-            manager.lookback();
-            manager.StopAllCoroutines();
-            manager.dialogManager = 0;
-            restartDia = true;
-            Epress = false;
+            
+            
+                manager.lookback();
+                GetComponent<BoxCollider>().enabled = false;
+                GetComponent<SphereCollider>().enabled = true;
+
+                manager.StopAllCoroutines();
+                manager.dialogManager = 0;
+                restartDia = true;
+                Epress = false;
+            
+
         }
     }
     public void startDialog()
