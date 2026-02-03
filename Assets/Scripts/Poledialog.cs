@@ -73,7 +73,7 @@ public class Poledialog : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {    
             Epress = false;
-        if (other.tag == "Player" && startDia == false )
+        if (other.tag == "Player" && startDia == false && !Ppickup)
         {  
 
             manager.Npc = gameObject;
@@ -81,6 +81,9 @@ public class Poledialog : MonoBehaviour
             manager.typing(DialogueSO.initiationLines[0]);            
             manager.lookAT();
             dialogexpired = false;
+            GetComponent<BoxCollider>().enabled = true;
+            GetComponent<SphereCollider>().enabled = false;
+            Debug.Log("Boop");
 
             //manager.nDialog.rectTransform.position = gameObject.transform.position + new Vector3(0, 1.5f, 0);
         }
@@ -94,12 +97,12 @@ public class Poledialog : MonoBehaviour
             
             Qcount++;
         }
-        if (other.tag == "Player")
-        {
-            GetComponent<BoxCollider>().enabled = true;
-            GetComponent<SphereCollider>().enabled = false;
-            Debug.Log("Boop");
-        }
+        //if (other.tag == "Player")
+        //{
+        //    GetComponent<BoxCollider>().enabled = true;
+        //    GetComponent<SphereCollider>().enabled = false;
+        //    Debug.Log("Boop");
+        //}
     }    
     private void OnTriggerStay(Collider other)
     {

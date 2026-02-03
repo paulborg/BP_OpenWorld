@@ -1307,7 +1307,7 @@ MonoBehaviour:
   nDialog: {fileID: 987591431}
   pDialog: {fileID: 1095356822}
   success: {fileID: 559912963}
-  activeQuest: {fileID: 646380557}
+  activeQuest: {fileID: 0}
   Button: {fileID: 1241796702}
 --- !u!114 &984063334
 MonoBehaviour:
@@ -1330,6 +1330,7 @@ MonoBehaviour:
   Npc: {fileID: 2000890845}
   Player: {fileID: 438309871}
   Controller: {fileID: 984063327}
+  cinemachineFreeLook: {fileID: 0}
   VirtualCamera: {fileID: 543071209}
   Confiner: {fileID: 543071211}
   StarterAssets: {fileID: 984063325}
@@ -2798,12 +2799,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Poledialog
   manager: {fileID: 984063334}
-  dialog: []
-  startDia: 0
   Quest: {fileID: 0}
   managerUi: {fileID: 984063328}
-  Qcount: 0
   DialogueSO: {fileID: 11400000, guid: d6fe8a4f62b834a48bcf7e0f0e569af8, type: 2}
+  Qcount: 0
+  Ppickup: 0
+  startDia: 0
+  dialogexpired: 0
+  restartDia: 0
+  Epress: 0
+  isDialogActive: 0
+  dialog: []
 --- !u!65 &2000890865
 BoxCollider:
   m_ObjectHideFlags: 0
