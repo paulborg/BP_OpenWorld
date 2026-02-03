@@ -237,7 +237,7 @@ public class Dialog_manager : MonoBehaviour
         //cinemachineFreeLook.Follow = null;
         cinemachineFreeLook.LookAt = Npc.transform;
         //VirtualCamera.LookAt = Npc.transform;
-        //Confiner.enabled = true;
+        Confiner.enabled = true;
         //StarterAssets.cursorLocked = false;
     }
     public void lookback()
@@ -245,7 +245,7 @@ public class Dialog_manager : MonoBehaviour
         //VirtualCamera.Follow = Player.transform;
         //VirtualCamera.LookAt = null;    
         cinemachineFreeLook.LookAt = Player.transform;
-        //Confiner.enabled = false;
+        Confiner.enabled = false;
         //StarterAssets.cursorLocked = true;
     }
     #endregion
