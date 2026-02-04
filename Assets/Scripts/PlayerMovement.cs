@@ -61,10 +61,18 @@ public class PlayerMovement : MonoBehaviour
         #endregion
 
         #region DEBUG - RESTART LEVEL
-        //if (Input.GetKeyDown(KeyCode.R))
-        //{
-        //    SceneManager.LoadScene("Prototyping");
-        //}
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            SceneManager.LoadScene("Level_Borgdahl_Alpha_01");
+        }
+        #endregion
+
+        #region DEBUG - QUIT GAME
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
         #endregion
 
         if (Input.GetKey(KeyCode.B))
