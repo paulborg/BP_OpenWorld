@@ -3,7 +3,8 @@ using UnityEngine;
 public class cameraFocus : MonoBehaviour
 {
     public Dialog_manager manager;
-    public GameObject gameOb;  
+    public GameObject gameOb;
+    int stop;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -17,8 +18,9 @@ public class cameraFocus : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Player")
+        if (other.tag == "Player" && stop == 0)
         {
+            stop++;
             manager.cinemachineFreeLook.LookAt = gameOb.transform;
         }
     }
