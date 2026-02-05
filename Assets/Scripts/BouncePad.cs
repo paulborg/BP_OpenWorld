@@ -2,9 +2,7 @@ using UnityEngine;
 
 public class BouncePad : MonoBehaviour
 {
-
     public float bounceForce = 10f;
-
 
     private void OnTriggerEnter(Collider other)
     {

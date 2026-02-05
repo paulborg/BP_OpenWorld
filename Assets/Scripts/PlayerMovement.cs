@@ -27,6 +27,9 @@ public class PlayerMovement : MonoBehaviour
     private float? jumpButtonPressedTime;
     private bool isJumping;
     private bool isGrounded;
+    private bool forcedBounce;
+
+    private Ui_manager uiManager;
 
     #region (DISABLED) Ledge Grab Variables
     //[SerializeField]
@@ -49,6 +52,7 @@ public class PlayerMovement : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         characterController = GetComponent<CharacterController>();
+        uiManager = GetComponent<Ui_manager>();
     }
 
     void Update()
@@ -75,9 +79,16 @@ public class PlayerMovement : MonoBehaviour
         }
         #endregion
 
-        if (Input.GetKey(KeyCode.B))
+        if (Input.GetKeyDown(KeyCode.Tab))
         {
-            ySpeed = 10f;
+            uiManager.ToggleJournal();
+        }
+
+
+
+        if (!characterController.isGrounded)
+        {
+            forcedBounce = false;
         }
 
             //Debug.Log(characterController.velocity);
@@ -114,9 +125,9 @@ public class PlayerMovement : MonoBehaviour
                 jumpButtonPressedTime = Time.time;
             }
 
-            if (Time.time - lastGroundedTime <= jumpButtonGracePeriod)
-            {
-                ySpeed = -0.5f;
+            if (Time.time - lastGroundedTime <= jumpButtonGracePeriod) //!forcedBounce && 
+        {
+                //ySpeed = -0.5f;
 
                 animator.SetBool("isGrounded", true);
                 isGrounded = true;
@@ -316,10 +327,13 @@ public class PlayerMovement : MonoBehaviour
         #endregion
 
 
-        public void Bounce (float verticalSpeed)
+        public void Bounce (float bounceForce)
     {
-        ySpeed = Mathf.Max(ySpeed, verticalSpeed);
+        //ySpeed = verticalSpeed;
 
+        ySpeed = 0;
+        ySpeed += bounceForce;
+        //forcedBounce = true;
 
         lastGroundedTime = -999f;
         jumpButtonPressedTime = -999f;

@@ -12,12 +12,14 @@ public class Ui_manager : MonoBehaviour
     public Text success;
     public TMP_Text activeQuest;
     public Button Button;
-
+    public Canvas playerHUD;
+    public Image journalBG;
+    private bool journalOpen = false;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-
+    
     }
 
     // Update is called once per frame
@@ -97,5 +99,24 @@ public class Ui_manager : MonoBehaviour
     }
     #endregion
 
+    public void ToggleJournal()
+    {
+        journalOpen = !journalOpen;
+        
+        if (journalOpen) 
+        {
+            journalBG.gameObject.SetActive(true);
+        }
 
+        else
+        {
+            journalBG.gameObject.SetActive(false);
+        }
+        
+    }
+
+    //public void CloseJournal()
+    //{
+    //    journalBG.gameObject.SetActive(false);
+    //}
 }
