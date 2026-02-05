@@ -8,6 +8,7 @@ public class Ui_manager : MonoBehaviour
 {
     public TMP_Text nDialog;
     public TMP_Text pDialog;
+    public TMP_Text qDialog;
     public Text success;
     public TMP_Text activeQuest;
     public Button Button;
@@ -24,9 +25,9 @@ public class Ui_manager : MonoBehaviour
     {
         nDialog.rectTransform.LookAt(Camera.main.transform);
         nDialog.rectTransform.Rotate(0, 180, 0);
-        pDialog.rectTransform.LookAt(Camera.main.transform);
-        pDialog.rectTransform.Rotate(0, 180, 0);
-        pDialog.rectTransform.position = transform.position + new Vector3(0, 0.5f, 0);
+        //pDialog.rectTransform.LookAt(Camera.main.transform);
+        //pDialog.rectTransform.Rotate(0, 180, 0);
+        //pDialog.rectTransform.position = transform.position + new Vector3(0, 0.5f, 0);
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -40,17 +41,17 @@ public class Ui_manager : MonoBehaviour
     #region
     public void pUiOn()
     {
-        nDialog.gameObject.SetActive(true);
+        pDialog.gameObject.SetActive(true);
     }
     public void pUiOff()
     {
-        nDialog.gameObject.SetActive(false);
+        pDialog.gameObject.SetActive(false);
     }
     #endregion
     #region NPC UI
     public void nUiOn()
     {
-        pDialog.gameObject.SetActive(true);
+        nDialog.gameObject.SetActive(true);
     }
     public void nUiOff()
     {

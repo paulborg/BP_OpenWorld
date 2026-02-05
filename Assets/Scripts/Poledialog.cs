@@ -155,18 +155,15 @@ public class Poledialog : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {        
         if (other.tag == "Player")
-        {
-            
-            
-                manager.lookback();
-                GetComponent<BoxCollider>().enabled = false;
-                GetComponent<SphereCollider>().enabled = true;
-
-                manager.StopAllCoroutines();
-                manager.dialogManager = 0;
-                restartDia = true;
-                Epress = false;
-            
+        {            
+            manager.lookback();               
+            GetComponent<BoxCollider>().enabled = false;                
+            GetComponent<SphereCollider>().enabled = true;               
+            manager.StopAllCoroutines();                
+            manager.dialogManager = 0;                
+            restartDia = true;                
+            Epress = false;
+            managerUi.nUiOff();
 
         }
     }
@@ -196,6 +193,7 @@ public class Poledialog : MonoBehaviour
         managerUi.nUiOff();
         isDialogActive = false;
         manager.startMoving();
-        
+        manager.lookback();
+
     }
 }
