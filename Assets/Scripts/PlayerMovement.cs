@@ -239,17 +239,17 @@ public class PlayerMovement : MonoBehaviour
         #endregion
 
         #region Lock Mouse On Game Focus
-        private void OnApplicationFocus(bool focus)
-        {
-            if (focus)
-            {
-                Cursor.lockState = CursorLockMode.Locked;
-            }
-            else
-            {
-                Cursor.lockState = CursorLockMode.None;
-            }
-        }
+        //private void OnApplicationFocus(bool focus)
+        //{
+        //    if (focus)
+        //    {
+        //        Cursor.lockState = CursorLockMode.Locked;
+        //    }
+        //    else
+        //    {
+        //        Cursor.lockState = CursorLockMode.None;
+        //    }
+        //}
         #endregion
 
         #region (DISABLED) Ledge-Grab Attempt 1 - Raycasts & Triggers 

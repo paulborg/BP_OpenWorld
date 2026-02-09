@@ -106,11 +106,13 @@ public class Ui_manager : MonoBehaviour
         if (journalOpen) 
         {
             journalBG.gameObject.SetActive(true);
+            //Cursor.lockState = CursorLockMode.None;
         }
 
         else
         {
             journalBG.gameObject.SetActive(false);
+            //Cursor.lockState = CursorLockMode.Locked;
         }
         
     }
