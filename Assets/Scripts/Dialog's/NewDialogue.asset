@@ -28,9 +28,9 @@ MonoBehaviour:
   - Thank you for helping me
   pDialogueLines: []
   activeQuestProgression:
-  - Delivers news papers 0/3
-  - Delivers news papers 1/3
-  - Delivers news papers 2/3
-  - Tell him you delivered then all
+  - Delivers newspapers 0/3
+  - Delivers newspapers 1/3
+  - Delivers newspapers 2/3
+  - Tell him you delivered them all
   - 
   choices: []
