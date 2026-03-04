@@ -14,12 +14,14 @@ public class Ui_manager : MonoBehaviour
     public Button Button;
     public Canvas playerHUD;
     public Image journalBG;
-    private bool journalOpen = false;
 
+    public RectTransform questInfo;
+    private bool journalOpen = false;
+    private bool questInfoOpen = false;
+    
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-    
     }
 
     // Update is called once per frame
@@ -73,7 +75,7 @@ public class Ui_manager : MonoBehaviour
         activeQuest.text = info;    
     }
 
-    #region 
+    #region Ui IEnumerator (?? - For checking Objective Progress?)
     IEnumerator Ui()
     {
        
@@ -108,14 +110,28 @@ public class Ui_manager : MonoBehaviour
             journalBG.gameObject.SetActive(true);
             //Cursor.lockState = CursorLockMode.None;
         }
-
         else
         {
             journalBG.gameObject.SetActive(false);
             //Cursor.lockState = CursorLockMode.Locked;
         }
-        
     }
+
+    #region //Attempt at expandable active quest objective, but needs more work, to also adjust objective text placement + would be nice to animate it opening smoothly etc. etc.
+    //public void ToggleQuestInfo()
+    //{
+    //    // Need a better way to check if quest is active, then change from Hidden to Partial here. Or Hidden -> Expanded on quest start, then Partial after delay.
+    //    questInfoOpen = !questInfoOpen;
+    //    if (questInfoOpen)
+    //    {
+    //        questInfo.transform.Translate(Vector3.down * 150f, Space.Self);
+    //    }
+    //    else
+    //    {
+    //        questInfo.transform.Translate(Vector3.up * 150f, Space.Self);
+    //    }
+    //}
+    #endregion
 
     //public void CloseJournal()
     //{

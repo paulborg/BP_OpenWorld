@@ -84,6 +84,10 @@ public class PlayerMovement : MonoBehaviour
             uiManager.ToggleJournal();
         }
 
+        //if (Input.GetKeyDown(KeyCode.Q))
+        //{
+        //    uiManager.ToggleQuestInfo();
+        //}
 
 
         if (!characterController.isGrounded)
