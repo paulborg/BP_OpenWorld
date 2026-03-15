@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: eceb01b6cddb88b4eae102ff350212be
+guid: b3ba3792ec5d7ff44840e287c4cf8a72
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
@@ -7,8 +7,8 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: M_FENCE_METAL_A
-    second: {fileID: 2100000, guid: f8999e34377d23147a8177e01fd95a55, type: 2}
+      name: standardSurface1
+    second: {fileID: 2100000, guid: 276a4a5283e1bbc459741b4125779090, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
