@@ -50,6 +50,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Start()
     {
+        Cursor.lockState = CursorLockMode.Locked;
         animator = GetComponent<Animator>();
         characterController = GetComponent<CharacterController>();
         uiManager = GetComponent<Ui_manager>();

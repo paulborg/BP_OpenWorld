@@ -9,7 +9,7 @@ public class ButtonHoverFX : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
     //private bool isHovering = false;
 
 
-    //++ Scale Effect (Pick and import tweening libraries for better/easier controls)
+    // -- DONE -- ++ Scale Effect (Pick and import tweening libraries for better/easier controls)
     //++ Color Effect
     //++ Sound Trigger
 

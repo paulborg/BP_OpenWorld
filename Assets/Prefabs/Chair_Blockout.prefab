@@ -97,6 +97,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 13b69e6d51ec06d40acbd446f334026f, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: bdd65272b6afc574c9d3fc459c773d99, type: 2}
     - target: {fileID: 919132149155446097, guid: 13b69e6d51ec06d40acbd446f334026f, type: 3}
       propertyPath: m_Name
       value: Proto_Block_Platform_Square_02 (1)
@@ -171,6 +175,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 13b69e6d51ec06d40acbd446f334026f, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: bdd65272b6afc574c9d3fc459c773d99, type: 2}
     - target: {fileID: 919132149155446097, guid: 13b69e6d51ec06d40acbd446f334026f, type: 3}
       propertyPath: m_Name
       value: Proto_Block_Platform_Square_02
@@ -245,6 +253,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 726d7041381faac4c9324a96ee1a7c90, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: bdd65272b6afc574c9d3fc459c773d99, type: 2}
     - target: {fileID: 919132149155446097, guid: 726d7041381faac4c9324a96ee1a7c90, type: 3}
       propertyPath: m_Name
       value: Proto_Block_Column_Round_02 (3)
@@ -319,6 +331,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 726d7041381faac4c9324a96ee1a7c90, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: bdd65272b6afc574c9d3fc459c773d99, type: 2}
     - target: {fileID: 919132149155446097, guid: 726d7041381faac4c9324a96ee1a7c90, type: 3}
       propertyPath: m_Name
       value: Proto_Block_Column_Round_02
@@ -393,6 +409,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 726d7041381faac4c9324a96ee1a7c90, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: bdd65272b6afc574c9d3fc459c773d99, type: 2}
     - target: {fileID: 919132149155446097, guid: 726d7041381faac4c9324a96ee1a7c90, type: 3}
       propertyPath: m_Name
       value: Proto_Block_Column_Round_02 (2)
@@ -467,6 +487,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 726d7041381faac4c9324a96ee1a7c90, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: bdd65272b6afc574c9d3fc459c773d99, type: 2}
     - target: {fileID: 919132149155446097, guid: 726d7041381faac4c9324a96ee1a7c90, type: 3}
       propertyPath: m_Name
       value: Proto_Block_Column_Round_02 (1)
