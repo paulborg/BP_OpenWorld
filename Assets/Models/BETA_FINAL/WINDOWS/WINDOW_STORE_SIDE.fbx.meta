@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 5b2f658a8e15f2c4fa36616552df14c9
+guid: c4da92af0ac24e94b947c6be8a7f94a0
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
@@ -8,12 +8,12 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: M_Glass
-    second: {fileID: 2100000, guid: b303b09d2e6105d4a83a6bcad6243933, type: 2}
+    second: {fileID: 2100000, guid: 262bf982392024d47946057134cf5095, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: M_Wood
-    second: {fileID: 2100000, guid: ce6ebadf6aa1079428bd194e831f02fb, type: 2}
+    second: {fileID: 2100000, guid: 6c02a2bc2beb3df4f94dd70ef391667f, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
