@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: N_Fance_2_Right
+  m_Name: N_Fance_2_Left 3 version
   m_Shader: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -28,11 +28,11 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _BaseMap:
-        m_Texture: {fileID: 2800000, guid: be8d0c7ce998d884486fe595faa6dec7, type: 3}
+        m_Texture: {fileID: 2800000, guid: 40db3401b2bdce047923369e05dca142, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BumpMap:
-        m_Texture: {fileID: 2800000, guid: eb15f2c94af2f31418a827a92564e236, type: 3}
+        m_Texture: {fileID: 2800000, guid: 2efad1d8d4651d04d9f16e05cbfc4351, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DetailAlbedoMap:
@@ -52,11 +52,11 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: be8d0c7ce998d884486fe595faa6dec7, type: 3}
+        m_Texture: {fileID: 2800000, guid: 40db3401b2bdce047923369e05dca142, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
-        m_Texture: {fileID: 2800000, guid: c51fc043b8a6e8e4c9330d6b949b6405, type: 3}
+        m_Texture: {fileID: 2800000, guid: 04334085bd85e0d41b226aece44b1db2, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
@@ -118,13 +118,13 @@ Material:
     - _XRMotionVectorsPass: 1
     - _ZWrite: 1
     m_Colors:
-    - _BaseColor: {r: 0.37, g: 0.21904, b: 0.19240001, a: 1}
-    - _Color: {r: 0.36999997, g: 0.21903998, b: 0.19239998, a: 1}
+    - _BaseColor: {r: 0.36862746, g: 0.21960786, b: 0.19215688, a: 1}
+    - _Color: {r: 0.36862743, g: 0.21960783, b: 0.19215685, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
---- !u!114 &6513683080699163384
+--- !u!114 &5162666364706703482
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
