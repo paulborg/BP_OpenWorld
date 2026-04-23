@@ -81,7 +81,7 @@ public class Dialog_manager : MonoBehaviour
         //pDialog.rectTransform.Rotate(0, 180, 0);
         //pDialog.rectTransform.position = Player.transform.position + new Vector3(0, 0.5f, 0);
 
-
+        Debug.Log(dialogManager);
     }
     #endregion
 
@@ -136,7 +136,7 @@ public class Dialog_manager : MonoBehaviour
             StartCoroutine(TypeOut(message));
             dialogManager = 1;
         }
-        nDialog.gameObject.SetActive(true);  
+        //nDialog.gameObject.SetActive(true);  
         
         switch (speech)
         {            

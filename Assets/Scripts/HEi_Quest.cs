@@ -1,9 +1,11 @@
+using TMPro;
 using UnityEngine;
 
 public class HEi_Quest : MonoBehaviour
 {
     [SerializeField] Dialog_manager manager;
     [SerializeField] Ui_manager ui_manager;
+    public TMP_Text npcDia;
     int speech;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -21,7 +23,9 @@ public class HEi_Quest : MonoBehaviour
     {
         if (other.TryGetComponent (out Dialog_manager manager ) && other.TryGetComponent(out Ui_manager ui_manager))
         {
-            speech = Random.Range(0, 4);
+            manager.nDialog = npcDia;
+            ui_manager.nDialog = npcDia;
+            speech = Random.Range(1, 4);
             ui_manager.nUiOn();
             switch (speech)
             { 
@@ -36,7 +40,11 @@ public class HEi_Quest : MonoBehaviour
                     break;
                 default:
                    break;
+               
+                    
             }
+            
+            Debug.Log(speech);
         }   
     }
     private void OnTriggerExit(Collider other)
