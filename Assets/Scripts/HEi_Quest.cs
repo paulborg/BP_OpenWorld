@@ -30,17 +30,16 @@ public class HEi_Quest : MonoBehaviour
             switch (speech)
             { 
                     case 1:
-                manager.typing("Hei!");
-                break;
+                    manager.typing("Hei!");
+                    break;
                     case 2:
                     manager.typing("You in a hurry");
                     break;
                     case 3:
                     manager.typing("Kids");
                     break;
-                default:
-                   break;
-               
+                    default:
+                    break;             
                     
             }
             
