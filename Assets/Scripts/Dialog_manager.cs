@@ -26,7 +26,7 @@ public class Dialog_manager : MonoBehaviour
     public CinemachineConfiner Confiner;
     public StarterAssetsInputs StarterAssets;
     private int pDialogManager;
-    public DialogueSO DialogueSO;
+    //public DialogueSO dialogueSO;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()

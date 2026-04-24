@@ -15,7 +15,12 @@ MonoBehaviour:
   charName: 
   initiationLines:
   - psst. come closer
-  QuestLines: []
+  QuestLines:
+  - A
+  - B
+  - C
+  - 
+  - 
   whileQuestLines: []
   endQuestLines: []
   pDialogueLines: []

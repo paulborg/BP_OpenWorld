@@ -18,6 +18,7 @@ public class Poledialog : MonoBehaviour
     public bool restartDia;
     public bool Epress;    
     public bool isDialogActive;
+    public bool canInteract;
 
     public string[] dialog;
     
@@ -27,6 +28,7 @@ public class Poledialog : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        canInteract = false;
         dialogexpired = false;
         Ppickup = false;
     }
@@ -71,7 +73,8 @@ public class Poledialog : MonoBehaviour
         #endregion
     }
     private void OnTriggerEnter(Collider other)
-    {    
+    {
+            canInteract = true;
             Epress = false;
         if (other.tag == "Player" && startDia == false && !Ppickup)
         {  
@@ -106,7 +109,7 @@ public class Poledialog : MonoBehaviour
     }    
     private void OnTriggerStay(Collider other)
     {
-        if (isDialogActive && !dialogexpired && manager.dialogManager == 0 && Epress && !restartDia)
+        if (isDialogActive && !dialogexpired && manager.dialogManager == 0 && Epress && !restartDia && canInteract)
         {
             dialogexpired = true;
             restartDia = true;
@@ -181,7 +184,7 @@ public class Poledialog : MonoBehaviour
         if (dialogueIndex >= DialogueSO.QuestLines.Length)
         {
             isDialogActive = true;
-           endDialog();
+            endDialog();
             return;
         }        
         manager.typing(DialogueSO.QuestLines[dialogueIndex]);
