@@ -1,6 +1,7 @@
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Quest_2 : MonoBehaviour
 {
@@ -11,7 +12,8 @@ public class Quest_2 : MonoBehaviour
     public DialogueSO Talk;
     public TMP_Text npcDia;
     public TMP_Text pDia;
-   
+    [SerializeField] Image npcImage;
+
     bool canInteract;   
     public bool Epress;
     bool isDialogActive;
@@ -50,7 +52,7 @@ public class Quest_2 : MonoBehaviour
         }
         
 
-        if (eventseq == 1 && Input.GetKeyDown(KeyCode.E) && isDialogActive)
+        if (eventseq == 1 && Input.GetKeyDown(KeyCode.E) && isDialogActive && diManager.dialogManager == 0)
         {
             Nextline();
         }
@@ -65,12 +67,14 @@ public class Quest_2 : MonoBehaviour
         {
             Epress = false ;
             
-            
+            ui_manager.nDialog = npcDia;
             manager.nDialog = npcDia;
             ui_manager.nUiOn();
-            ui_manager.nDialog = npcDia;
+            ui_manager.image = npcImage;            
+           
             if (!canInteract)
             {
+                ui_manager.imageOn();
                 npcDia.text = Talk.initiationLines[0];
                 canInteract = true;
                 isQuestActive=true;
@@ -82,7 +86,8 @@ public class Quest_2 : MonoBehaviour
            
             if (eventseq == 3)
             {
-                npcDia.text =Talk.endQuestLines[0];
+                
+                diManager.typing(Talk.endQuestLines[0]);
                 isQuestActive = false;
                 endOfQuest();
             }
@@ -95,9 +100,19 @@ public class Quest_2 : MonoBehaviour
         // show dialog on screenspace
         if (eventseq == 0 && Epress && !isDialogActive )//&& interact == true ???)
         {
+            uiManager.imageOff();
             startDialog();
             isDialogActive = true;
             eventseq++;
+        }
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.TryGetComponent(out Dialog_manager manager) && other.TryGetComponent(out Ui_manager ui_manager))
+        {
+            ui_manager.nUiOff();
+            
+
         }
     }
     public void startDialog()

@@ -11,6 +11,7 @@ public class Ui_manager : MonoBehaviour
     public TMP_Text qDialog;
     public Text success;
     public TMP_Text activeQuest;
+    public Image image;
     public Button Button;
     public Canvas playerHUD;
     public Image journalBG;
@@ -74,7 +75,14 @@ public class Ui_manager : MonoBehaviour
     {
         activeQuest.text = info;    
     }
-
+    public void imageOff()
+    {
+        image.gameObject.SetActive(false);  
+    }
+    public void imageOn()
+    {
+        image.gameObject.SetActive(true);
+    }
     #region Ui IEnumerator (?? - For checking Objective Progress?)
     IEnumerator Ui()
     {
