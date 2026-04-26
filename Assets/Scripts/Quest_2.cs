@@ -10,17 +10,22 @@ public class Quest_2 : MonoBehaviour
    
     public DialogueSO Talk;
     public TMP_Text npcDia;
+    public TMP_Text pDia;
    
     bool canInteract;   
-    bool Epress;
+    public bool Epress;
     bool isDialogActive;
+    public bool isQuestActive;
     
     public int dialogindex;
+    public int eventseq;
     
     // interactable 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        eventseq = 0;
+        isQuestActive = false;
         isDialogActive = false;
         Epress = false;
         canInteract = false;
@@ -37,12 +42,21 @@ public class Quest_2 : MonoBehaviour
             Epress = true; 
             
         }
+        if (Input.GetKeyDown(KeyCode.G) && eventseq == 2) // is quest active needs to be there so that you cant do the promt before you strat the quest and after you start the quest &&  is dialog active is there to stop it from functoning in the middle of a dialogue
+        {
+           
+            wcainteraction();
 
+        }
+        
 
-       if (canInteract && Input.GetKeyDown(KeyCode.E) && isDialogActive)
-       {
+        if (eventseq == 1 && Input.GetKeyDown(KeyCode.E) && isDialogActive)
+        {
             Nextline();
-       }
+        }
+
+        
+       
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -59,12 +73,19 @@ public class Quest_2 : MonoBehaviour
             {
                 npcDia.text = Talk.initiationLines[0];
                 canInteract = true;
+                isQuestActive=true;
             }
-            else if (canInteract)
+            else if (canInteract && dialogindex == 3)
             {
                 npcDia.text = Talk.whileQuestLines[0];
             }
-            
+           
+            if (eventseq == 3)
+            {
+                npcDia.text =Talk.endQuestLines[0];
+                isQuestActive = false;
+                endOfQuest();
+            }
         }
     }
     private void OnTriggerStay(Collider other)
@@ -72,10 +93,11 @@ public class Quest_2 : MonoBehaviour
         //interact()
         //lock player movement 
         // show dialog on screenspace
-        if (canInteract && Epress && !isDialogActive )//&& interact == true ???)
+        if (eventseq == 0 && Epress && !isDialogActive )//&& interact == true ???)
         {
             startDialog();
             isDialogActive = true;
+            eventseq++;
         }
     }
     public void startDialog()
@@ -83,25 +105,47 @@ public class Quest_2 : MonoBehaviour
         diManager.typing(Talk.QuestLines[dialogindex]);
         diManager.stopMoving();
         Debug.Log("youdidit");
-        dialogindex++;       
+        //dialogindex++;  
+        
     }
     public void Nextline()
     {
-        if (dialogindex == 3)
+        if (dialogindex == 2)
         {
 
             EndDialog();
             return;
         }
-        else if (dialogindex < 3)
+        else if (dialogindex < 2)
         {
-            diManager.typing(Talk.QuestLines[dialogindex]);
             dialogindex++;
+            diManager.typing(Talk.QuestLines[dialogindex]);
+            
         }
     }
     public void EndDialog()
     { 
-        canInteract = false;
+        
+        isDialogActive = false;
         diManager.startMoving();
+        eventseq++;
     }
+    public void wcainteraction()
+    {
+        uiManager.pDialog= pDia;
+        diManager.pDialog = pDia;
+        diManager.pTyping(Talk.pDialogueLines[0]);
+        
+        
+        // while quest is active
+            
+    }
+   
+    public void endOfQuest()
+    {
+        eventseq++;
+        eventseq++;
+        isQuestActive = false;
+    }
+
 }

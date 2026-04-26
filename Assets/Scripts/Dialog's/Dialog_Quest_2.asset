@@ -15,14 +15,20 @@ MonoBehaviour:
   charName: 
   initiationLines:
   - psst. come closer
+  - Hei over here
   QuestLines:
   - A
   - B
   - C
-  - 
-  - 
-  whileQuestLines: []
-  endQuestLines: []
-  pDialogueLines: []
+  - D
+  - E
+  whileQuestLines:
+  - Have you told him
+  - 'Yeah you tell him '
+  endQuestLines:
+  - Oh that Mf
+  pDialogueLines:
+  - Robert
+  - Test
   activeQuestProgression: []
   choices: []

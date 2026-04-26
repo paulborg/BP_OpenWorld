@@ -189,7 +189,7 @@ public class Dialog_manager : MonoBehaviour
             yield return new WaitForSeconds(Typespeed);
 
         }
-        dialogManager = 0;
+        pDialogManager = 0;
         //Controller = FindAnyObjectByType<ThirdPersonController>();
         //Controller.MoveSpeed = 2;
 
@@ -206,7 +206,7 @@ public class Dialog_manager : MonoBehaviour
             StartCoroutine(pTypeOut(message));
             pDialogManager = 1;
         }
-        pDialog.gameObject.SetActive(true);
+        //pDialog.gameObject.SetActive(true);
 
         switch (speech)
         {
