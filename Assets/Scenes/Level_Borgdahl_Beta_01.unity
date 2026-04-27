@@ -54937,6 +54937,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TREE_BASIC_A (34)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 083414a7e59234e4bbf06a2d7371c9e9, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -70232,7 +70236,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &612181042
 RectTransform:
   m_ObjectHideFlags: 0
@@ -85997,6 +86001,81 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -288180422923774495, guid: cfe0fa7554188db4f8bb8745fed06782, type: 3}
+--- !u!1 &766258964
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 766258965}
+  - component: {fileID: 766258967}
+  - component: {fileID: 766258966}
+  m_Layer: 0
+  m_Name: image_Quest_2_Npc_2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &766258965
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 766258964}
+  m_LocalRotation: {x: -0.018533196, y: -0.6085942, z: -0.014221225, w: 0.7931377}
+  m_LocalPosition: {x: 0, y: 0, z: -31.6}
+  m_LocalScale: {x: 0.016892534, y: 0.016892534, z: 0.016892534}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 978513727}
+  m_LocalEulerAnglesHint: {x: -2.677, y: -75, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 412.68, y: -6.76}
+  m_SizeDelta: {x: 131, y: 132}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &766258966
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 766258964}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: -136880398, guid: 4bf22bad7bd2e9c49a1c91def8bc2eba, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &766258967
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 766258964}
+  m_CullTransparentMesh: 1
 --- !u!1001 &766588844
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -91240,8 +91319,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1504151313}
   - {fileID: 2134211204}
+  - {fileID: 1504151313}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!114 &816459075
@@ -91260,7 +91339,9 @@ MonoBehaviour:
   Quest: {fileID: 0}
   managerUi: {fileID: 1151808566}
   DialogueSO: {fileID: 11400000, guid: d6fe8a4f62b834a48bcf7e0f0e569af8, type: 2}
+  npcDia: {fileID: 1401595298}
   Qcount: 0
+  eventTracker: 0
   Ppickup: 0
   startDia: 0
   dialogexpired: 0
@@ -109226,6 +109307,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 612181042}
+  - {fileID: 766258965}
   m_Father: {fileID: 1922727474}
   m_LocalEulerAnglesHint: {x: 0, y: 165, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -121053,7 +121135,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1090744292
 RectTransform:
   m_ObjectHideFlags: 0
@@ -122382,8 +122464,8 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 3.0030246
-  m_Center: {x: -0.6486562, y: 2.3201141, z: -0.09329927}
+  m_Radius: 2.6463597
+  m_Center: {x: -0.29199058, y: 2.3201144, z: -0.09329927}
 --- !u!114 &1101379949
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -122401,6 +122483,7 @@ MonoBehaviour:
   Talk: {fileID: 11400000, guid: 26df2e97d030bf44cbca0d048b3fda6b, type: 2}
   npcDia: {fileID: 1686900856}
   pDia: {fileID: 834519688}
+  npcImage: {fileID: 1090744293}
   Epress: 0
   isQuestActive: 0
   dialogindex: 0
@@ -127929,6 +128012,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 3b8717b6f41e735488a687ef9b429f26, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1151808567}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 3b8717b6f41e735488a687ef9b429f26, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1151808568}
   m_SourcePrefab: {fileID: 100100000, guid: 3b8717b6f41e735488a687ef9b429f26, type: 3}
 --- !u!1 &1151808561 stripped
 GameObject:
@@ -128021,6 +128107,7 @@ MonoBehaviour:
   qDialog: {fileID: 0}
   success: {fileID: 0}
   activeQuest: {fileID: 1416789332}
+  image: {fileID: 1090744293}
   Button: {fileID: 0}
   playerHUD: {fileID: 509073287517753094}
   journalBG: {fileID: 6488233538919758625}
@@ -128038,9 +128125,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Dialog_manager
   nDialog: {fileID: 1439697767}
-  pDialog: {fileID: 0}
+  pDialog: {fileID: 834519688}
   Quest: {fileID: 0}
-  speech: 0
+  speech: 1
   dialogManager: 0
   Camera: {fileID: 330585545}
   Npc: {fileID: 816459071}
@@ -128050,6 +128137,19 @@ MonoBehaviour:
   VirtualCamera: {fileID: 0}
   Confiner: {fileID: 1677467112}
   StarterAssets: {fileID: 0}
+--- !u!114 &1151808568
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1151808561}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 114204caea63ee54e9fd68ce023f6231, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerInteraction
+  playerReach: 4
 --- !u!4 &1152890953 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 083414a7e59234e4bbf06a2d7371c9e9, type: 3}
@@ -156407,12 +156507,12 @@ GameObject:
   - component: {fileID: 1401595299}
   - component: {fileID: 1401595298}
   m_Layer: 5
-  m_Name: NPC_Greet_Text
+  m_Name: NPC_Quest_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1401595297
 RectTransform:
   m_ObjectHideFlags: 0
@@ -156452,10 +156552,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: hhhhhhgggggggggggggggggggg
+  m_text: hhh
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}
-  m_sharedMaterial: {fileID: 2100000, guid: f2dcf029949142e28b974630369c8b4e, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 2b734e63c19a07c419424d8e9eeb8b0c, type: 2}
+  m_sharedMaterial: {fileID: 3676039016820092145, guid: 2b734e63c19a07c419424d8e9eeb8b0c, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -188148,7 +188248,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1686900855
 RectTransform:
   m_ObjectHideFlags: 0
@@ -230845,7 +230945,9 @@ MonoBehaviour:
   Quest: {fileID: 0}
   managerUi: {fileID: 1151808566}
   DialogueSO: {fileID: 11400000, guid: d6fe8a4f62b834a48bcf7e0f0e569af8, type: 2}
+  npcDia: {fileID: 0}
   Qcount: 0
+  eventTracker: 0
   Ppickup: 0
   startDia: 0
   dialogexpired: 0
@@ -232073,6 +232175,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Quest_2_NPC_Inter
   quest: {fileID: 1101379949}
   diManager: {fileID: 1151808567}
+  uiManager: {fileID: 1151808566}
+  npcImage: {fileID: 766258966}
   npcDia: {fileID: 612181043}
 --- !u!65 &2096597311
 BoxCollider:

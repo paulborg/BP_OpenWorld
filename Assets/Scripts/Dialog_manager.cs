@@ -117,6 +117,7 @@ public class Dialog_manager : MonoBehaviour
         nDialog.text = "";
         foreach (char letter in message)
         {
+            
             nDialog.text += letter;
             yield return new WaitForSeconds(Typespeed);
             

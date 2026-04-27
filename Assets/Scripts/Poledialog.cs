@@ -1,5 +1,6 @@
 //using JetBrains.Annotations;
 //using UnityEditor.Rendering;
+using TMPro;
 using UnityEngine;
 
 public class Poledialog : MonoBehaviour
@@ -8,9 +9,12 @@ public class Poledialog : MonoBehaviour
     public Quest_1 Quest;
     public Ui_manager managerUi;
     public DialogueSO DialogueSO;
-    
+    public TMP_Text npcDia;
+
     public int Qcount;
     int dialogueIndex;
+    public int eventTracker;
+
     
     public bool Ppickup;
     public bool startDia;
@@ -28,6 +32,7 @@ public class Poledialog : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        eventTracker = 0;
         canInteract = false;
         dialogexpired = false;
         Ppickup = false;
@@ -37,7 +42,7 @@ public class Poledialog : MonoBehaviour
     void Update()
     {
         Debug.Log(Qcount);
-        if (isDialogActive && Input.GetKeyDown(KeyCode.E) && manager.dialogManager == 0)
+        if (eventTracker == 1 && Input.GetKeyDown(KeyCode.E) && manager.dialogManager == 0)
         {
             nextLine();
         }
@@ -76,14 +81,20 @@ public class Poledialog : MonoBehaviour
     {
             canInteract = true;
             Epress = false;
-        if (other.tag == "Player" && startDia == false && !Ppickup)
-        {  
-
+        managerUi.nUiOn();
+        if (other.tag == "Player" && eventTracker == 0)
+        {
+            manager.nDialog = npcDia;
+            managerUi.nDialog = npcDia;
             manager.Npc = gameObject;
-            //startDia = true;           
+            
+            //startDia = true;
+            
+            
             manager.typing(DialogueSO.initiationLines[0]);            
             manager.lookAT();
             dialogexpired = false;
+            
             GetComponent<BoxCollider>().enabled = true;
             GetComponent<SphereCollider>().enabled = false;
             Debug.Log("Boop");
@@ -106,23 +117,7 @@ public class Poledialog : MonoBehaviour
         //    GetComponent<SphereCollider>().enabled = false;
         //    Debug.Log("Boop");
         //}
-    }    
-    private void OnTriggerStay(Collider other)
-    {
-        if (isDialogActive && !dialogexpired && manager.dialogManager == 0 && Epress && !restartDia && canInteract)
-        {
-            dialogexpired = true;
-            restartDia = true;
-            //isDialogActive = true;
-            startDialog();
-            
-        }
-        #region 
-        if (dialogueIndex >= DialogueSO.QuestLines.Length)
-        {
-            managerUi.active_quest(DialogueSO.activeQuestProgression[0]);                       
-        }       
-        if (restartDia && Epress && Qcount == 0 && !isDialogActive)
+        if (eventTracker == 2 && Qcount == 0 && !isDialogActive)
         {
             manager.typing(DialogueSO.whileQuestLines[0]);
             restartDia = false;
@@ -146,6 +141,23 @@ public class Poledialog : MonoBehaviour
             restartDia = false;
             //manager.lookAT();
         }
+    }    
+    private void OnTriggerStay(Collider other)
+    {
+        if (!isDialogActive && !dialogexpired && manager.dialogManager == 0 && Epress && !restartDia && canInteract)
+        {
+            dialogexpired = true;
+            restartDia = true;
+            //isDialogActive = true;
+            startDialog();
+            eventTracker++;
+        }
+        #region 
+        if (dialogueIndex >= DialogueSO.QuestLines.Length)
+        {
+            managerUi.active_quest(DialogueSO.activeQuestProgression[0]);                       
+        }       
+       
         if (Qcount == 4 && Epress && restartDia && !isDialogActive)
         {
             manager.Npc = gameObject;
@@ -172,7 +184,7 @@ public class Poledialog : MonoBehaviour
     }
     public void startDialog()
     {
-        dialogueIndex= 0;
+        dialogueIndex = 0;
         //manager.nDialog.rectTransform.position = gameObject.transform.position + new Vector3(0, 1.5f, 0);
         Debug.Log("dialog started");
         manager.typing(DialogueSO.QuestLines[dialogueIndex]);
@@ -192,6 +204,7 @@ public class Poledialog : MonoBehaviour
     }
     public void endDialog()
     {
+        eventTracker++;
         Ppickup = true;
         managerUi.nUiOff();
         isDialogActive = false;
