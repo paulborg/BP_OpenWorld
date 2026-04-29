@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Townhall_Door_default_Glass
+  m_Name: House_1 Darker
   m_Shader: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -28,11 +28,11 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _BaseMap:
-        m_Texture: {fileID: 2800000, guid: 20e5c1ccd493f0d40af5e3bc4714b963, type: 3}
+        m_Texture: {fileID: 2800000, guid: 8729d7a357cb1f74db70064e6167d4f7, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BumpMap:
-        m_Texture: {fileID: 2800000, guid: f4684ab0eb7212a4695c4cd72b2d308f, type: 3}
+        m_Texture: {fileID: 2800000, guid: 8cedd941df4015642bd30e52da029db5, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DetailAlbedoMap:
@@ -52,11 +52,11 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 20e5c1ccd493f0d40af5e3bc4714b963, type: 3}
+        m_Texture: {fileID: 2800000, guid: 8729d7a357cb1f74db70064e6167d4f7, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
-        m_Texture: {fileID: 2800000, guid: 8d4e24729390e834f9489d3a95e113d8, type: 3}
+        m_Texture: {fileID: 2800000, guid: 744f4de7e1bdaa04aa050a06d9cf3635, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
@@ -118,13 +118,13 @@ Material:
     - _XRMotionVectorsPass: 1
     - _ZWrite: 1
     m_Colors:
-    - _BaseColor: {r: 0.18823531, g: 0.47450984, b: 0.59607846, a: 1}
-    - _Color: {r: 0.18823528, g: 0.47450978, b: 0.5960784, a: 1}
+    - _BaseColor: {r: 0.32599998, g: 0.2875393, b: 0.19596627, a: 1}
+    - _Color: {r: 0.32599995, g: 0.28753927, b: 0.19596624, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
---- !u!114 &7523737310934257003
+--- !u!114 &5243377557305510861
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
