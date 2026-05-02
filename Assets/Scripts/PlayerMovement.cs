@@ -6,16 +6,16 @@ using UnityEngine.SceneManagement;
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField]
-    private float rotationSpeed;
+    private float rotationSpeed = 720f;
 
     [SerializeField]
-    private float jumpSpeed;
+    private float jumpSpeed = 5f;
 
     [SerializeField]
-    private float jumpHorizontalSpeed;
+    private float jumpHorizontalSpeed = 3f;
 
     [SerializeField]
-    private float jumpButtonGracePeriod;
+    private float jumpButtonGracePeriod = 0.2f;
 
     [SerializeField]
     private Transform cameraTransform;
@@ -26,10 +26,15 @@ public class PlayerMovement : MonoBehaviour
     private float? lastGroundedTime;
     private float? jumpButtonPressedTime;
     private bool isJumping;
-    private bool isGrounded;
+    public bool isGrounded;
     private bool forcedBounce;
 
     private Ui_manager uiManager;
+
+    //FOOTSTEP AUDIO STUFF - PROBABLY MOVING TO OWN SCRIPT LATER
+    AudioSource audioSource;
+    public AudioClip[] footstepSFX;
+
 
     #region (DISABLED) Ledge Grab Variables
     //[SerializeField]
@@ -51,9 +56,11 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
-        animator = GetComponentInChildren<Animator>();
-        characterController = GetComponentInChildren<CharacterController>();
+        animator = GetComponent<Animator>();
+        characterController = GetComponent<CharacterController>();
         uiManager = GetComponent<Ui_manager>();
+
+        audioSource = GetComponent<AudioSource>(); // FOOTSTEP AUDIO RELATED
     }
 
     void Update()
@@ -107,7 +114,7 @@ public class PlayerMovement : MonoBehaviour
 
             if (Input.GetKey(KeyCode.LeftShift))
             {
-                inputMagnitude /= 2;
+                inputMagnitude *= 2;
             }
 
             animator.SetFloat("Input Magnitude", inputMagnitude, 0.05f, Time.deltaTime);
@@ -202,7 +209,7 @@ public class PlayerMovement : MonoBehaviour
             #region Mid-Air Movement Override
             if (isGrounded == false) //&& !onLedge) 
             {
-                Vector3 velocity = movementDirection * inputMagnitude * jumpHorizontalSpeed;
+            Vector3 velocity = movementDirection * inputMagnitude * jumpHorizontalSpeed;  //!!! - HAVE TO FIX VELOCITY WHILE SPRINT+JUMPING. Need additional check for inputmagnitude value, or just a "isSprinting"
                 velocity.y = ySpeed;
 
                 characterController.Move(velocity * Time.deltaTime);
@@ -333,7 +340,7 @@ public class PlayerMovement : MonoBehaviour
 
 
         public void Bounce (float bounceForce)
-    {
+        {
         //ySpeed = verticalSpeed;
 
         ySpeed = 0;
@@ -351,8 +358,15 @@ public class PlayerMovement : MonoBehaviour
         animator.SetBool("isJumping", true);
         animator.SetBool("isFalling", false);
 
+        }
+
+    public void PlayFootstep(AnimationEvent animationEvent)
+    {
+        if (animationEvent.animatorClipInfo.weight > 0.5f)
+        {
+            audioSource.pitch = Random.Range(0.8f, 1.2f);
+            audioSource.Play();
+        }
     }
+}
 
-
-
-    }
