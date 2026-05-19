@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7a1e212a418c5e4b924eddba931a352, type: 3}
+  m_Name: NPC_QUEST_2
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueSO
+  charName: 
+  initiationLines:
+  - Quest 2 Start
+  QuestLines:
+  - Intro Dialogue Line 1
+  - Intro Dialogue Line 2
+  - Intro Dialogue Line 3
+  - Intro Dialogue Line 4
+  whileQuestLines:
+  - Ongoing Quest Line 1
+  - Ongoing Quest Line 2
+  - Ongoing Quest Line 3
+  endQuestLines:
+  - Quest 2 End Line
+  pDialogueLines: []
+  activeQuestProgression:
+  - Quest 2 Objective 1
+  - Quest 2 Objective 2
+  - Quest 2 Objective 3
+  - Quest 2 Completed
+  - Wow Two
+  choices: []

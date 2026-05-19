@@ -28,10 +28,12 @@ public class Ui_manager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        nDialog.rectTransform.LookAt(Camera.main.transform);
-        nDialog.rectTransform.Rotate(0, 180, 0);
-        pDialog.rectTransform.LookAt(Camera.main.transform);
-        pDialog.rectTransform.Rotate(0, 180, 0);
+        
+        //nDialog.rectTransform.LookAt(Camera.main.transform);
+        //nDialog.rectTransform.Rotate(0, 180, 0);
+        //pDialog.rectTransform.LookAt(Camera.main.transform);
+        //pDialog.rectTransform.Rotate(0, 180, 0);
+
         //pDialog.rectTransform.position = transform.position + new Vector3(0, 0.5f, 0);
     }
     private void OnTriggerEnter(Collider other)

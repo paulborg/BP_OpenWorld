@@ -7,8 +7,7 @@ public class Pickups : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
        if (other.tag == "Player" && poledialog.Ppickup== true)
-       {           
-            
+       {          
                 gameObject.SetActive(false);
                 poledialog.Qcount++;
                

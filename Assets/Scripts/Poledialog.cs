@@ -53,6 +53,9 @@ public class Poledialog : MonoBehaviour
         }
         //Debug.Log(Quest.Qcount);
         //Debug.Log(startDia);
+
+        if (eventTracker == 2)
+            {
         switch (Qcount)
         {
             case 0:
@@ -72,16 +75,18 @@ public class Poledialog : MonoBehaviour
                 managerUi.active_quest(DialogueSO.activeQuestProgression[4]);
                 break;
             default:
-                managerUi.active_quest("");
+                managerUi.active_quest("3");
                 break;
-        }      
+        }
+        }
         #endregion
     }
     private void OnTriggerEnter(Collider other)
     {
             canInteract = true;
             Epress = false;
-        managerUi.nUiOn();
+            managerUi.nUiOn();
+
         if (other.tag == "Player" && eventTracker == 0)
         {
             manager.nDialog = npcDia;
@@ -89,10 +94,8 @@ public class Poledialog : MonoBehaviour
             manager.Npc = gameObject;
             
             //startDia = true;
-            
-            
             manager.typing(DialogueSO.initiationLines[0]);            
-            manager.lookAT();
+            //manager.lookAT();
             dialogexpired = false;
             
             GetComponent<BoxCollider>().enabled = true;
@@ -106,10 +109,12 @@ public class Poledialog : MonoBehaviour
         {
             manager.Npc = gameObject;
             manager.typing(DialogueSO.endQuestLines[0]);
-            manager.lookAT();
+            eventTracker++;
+            managerUi.active_quest("1");
+            //manager.lookAT();
             //managerUi.questCompletion();
-            
-            Qcount++;
+
+            //Qcount++;   
         }
         //if (other.tag == "Player")
         //{
@@ -123,24 +128,25 @@ public class Poledialog : MonoBehaviour
             restartDia = false;
             //manager.lookAT();
         }
-        if (Qcount < 4 && Qcount == 0 && Epress && restartDia &&!isDialogActive)
-        {
-            manager.typing(DialogueSO.whileQuestLines[0]);
-            restartDia = false;
-            //manager.lookAT();
-        }
-        if (Qcount < 4 && Qcount == 1 && Epress && restartDia && !isDialogActive)
-        {
+        //if (Qcount < 4 && Qcount == 0 && Epress && restartDia &&!isDialogActive)
+            if (eventTracker == 2 && Qcount == 1 && !isDialogActive)
+            {
             manager.typing(DialogueSO.whileQuestLines[1]);
             restartDia = false;
             //manager.lookAT();
         }
-        if (Qcount < 4 && Qcount >= 2 && Epress && restartDia && !isDialogActive)
+        if (eventTracker == 2 && Qcount == 2 && !isDialogActive)
         {
             manager.typing(DialogueSO.whileQuestLines[2]);
             restartDia = false;
             //manager.lookAT();
         }
+        //if (eventTracker == 2 && Qcount == 3 && !isDialogActive)
+        //{
+        //    manager.typing(DialogueSO.whileQuestLines[3]);
+        //    restartDia = false;
+        //    //manager.lookAT();
+        //}
     }    
     private void OnTriggerStay(Collider other)
     {
@@ -153,7 +159,7 @@ public class Poledialog : MonoBehaviour
             eventTracker++;
         }
         #region 
-        if (dialogueIndex >= DialogueSO.QuestLines.Length)
+        if (dialogueIndex >= DialogueSO.QuestLines.Length && eventTracker == 2)
         {
             managerUi.active_quest(DialogueSO.activeQuestProgression[0]);                       
         }       
@@ -162,8 +168,9 @@ public class Poledialog : MonoBehaviour
         {
             manager.Npc = gameObject;
             manager.typing(DialogueSO.endQuestLines[0]);
-            manager.lookAT();
-            restartDia = false;                  
+            //manager.lookAT();
+            restartDia = false;
+            //managerUi.active_quest("2");
         }
         #endregion
     }
@@ -209,7 +216,6 @@ public class Poledialog : MonoBehaviour
         managerUi.nUiOff();
         isDialogActive = false;
         manager.startMoving();
-        manager.lookback();
-
+        //manager.lookback();
     }
 }

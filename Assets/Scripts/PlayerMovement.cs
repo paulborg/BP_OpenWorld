@@ -75,7 +75,7 @@ public class PlayerMovement : MonoBehaviour
         #region DEBUG - RESTART LEVEL
         if (Input.GetKeyDown(KeyCode.R))
         {
-            SceneManager.LoadScene("Level_Borgdahl_Alpha_01");
+            SceneManager.LoadScene("Level_Borgdahl_Beta_01");
         }
         #endregion
 

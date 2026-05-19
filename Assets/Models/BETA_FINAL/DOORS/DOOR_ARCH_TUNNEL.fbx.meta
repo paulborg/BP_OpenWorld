@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: eceb01b6cddb88b4eae102ff350212be
+guid: c01df25a64d4cc347ad8474cbf04820a
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
@@ -7,8 +7,8 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: M_FENCE_METAL_A
-    second: {fileID: 2100000, guid: f8999e34377d23147a8177e01fd95a55, type: 2}
+      name: aiStandardSurface24
+    second: {fileID: 2100000, guid: 58b74fe9ef16cc24da562ba7e180dce5, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -40,7 +40,7 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
-    addColliders: 0
+    addColliders: 1
     useSRGBMaterialColor: 1
     sortHierarchyByName: 1
     importPhysicalCameras: 1
