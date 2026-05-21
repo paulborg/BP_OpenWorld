@@ -14,23 +14,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DialogueSO
   charName: 
   initiationLines:
-  - '!!Hei you there!! I Could use some help'
+  - Hei there help!!
   QuestLines:
-  - Ohh Thank you
-  - 'I hurt my knee '
-  - 'Could you help me deliver some news papers '
-  - Thank you
+  - You came thank you
+  - I hurt my knee riding my bike
+  - 'Could you help finish delivering these news papers, I''ll pay  '
+  - THANK YOU
   whileQuestLines:
   - Have you started delivering the news papers
-  - Oh you have 2 more paper to go
-  - Oh you have 1 more paper to go
+  - You just have 2 more papers to go
+  - You have 1 more left
   endQuestLines:
   - Thank you for helping me
   pDialogueLines: []
   activeQuestProgression:
-  - Delivers newspapers 0/3
-  - Delivers newspapers 1/3
-  - Delivers newspapers 2/3
-  - Tell him you delivered them all
+  - Newspapers 0/3
+  - Newspapers 1/3
+  - Newspapers 2/3
+  - Talk to Biker Boy
   - 
   choices: []

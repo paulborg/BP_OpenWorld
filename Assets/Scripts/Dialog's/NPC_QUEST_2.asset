@@ -14,23 +14,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DialogueSO
   charName: 
   initiationLines:
-  - Quest 2 Start
+  - 'Hei '
   QuestLines:
-  - Intro Dialogue Line 1
-  - Intro Dialogue Line 2
-  - Intro Dialogue Line 3
-  - Intro Dialogue Line 4
+  - I have secret candy on the roof
+  - Could you get my candy
+  - Ill give you
+  - Candy
   whileQuestLines:
-  - Ongoing Quest Line 1
-  - Ongoing Quest Line 2
-  - Ongoing Quest Line 3
+  - My candy is on there roof
+  - I hide it from my oncle's
+  - GIVE CANDY!!
   endQuestLines:
-  - Quest 2 End Line
+  - MYYYY CANDYYY
   pDialogueLines: []
   activeQuestProgression:
-  - Quest 2 Objective 1
-  - Quest 2 Objective 2
-  - Quest 2 Objective 3
-  - Quest 2 Completed
+  - Secret Candy 0/3
+  - Secret Candy 1/3
+  - Secret Candy 2/3
+  - GIVE CANDY!!
   - Wow Two
   choices: []

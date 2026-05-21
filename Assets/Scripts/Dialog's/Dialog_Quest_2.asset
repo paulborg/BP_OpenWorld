@@ -15,18 +15,18 @@ MonoBehaviour:
   charName: 
   initiationLines:
   - psst. come closer
-  - Hei over here
+  - oh hei i'm here
   QuestLines:
-  - AAAAAAAAAAAAAAA
-  - BBBBBBBBBBBBBBBB
-  - CCCCCCCCCCCCCC
-  - DDDDDDDDDDDDDD
-  - EEEEEEEEEEEEEEEEE
+  - So this robert took my two pennies
+  - One is somewhere in this bush and he has the other
+  - Tell him to give it back
+  - Ohh Hehe
+  - I spent it on myself
   whileQuestLines:
   - Have you told him
   - 'Yeah you tell him '
   endQuestLines:
-  - Oh that Mf
+  - 'Oh That Thief '
   pDialogueLines:
   - Robert
   - Test
