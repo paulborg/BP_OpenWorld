@@ -10,5 +10,6 @@ public enum NPC_IdleType
     TalkGestureActive,
     TalkGestureListen,
     WaveHello,
-    WindowShopping
+    WindowShopping,
+    SitGround
 }
